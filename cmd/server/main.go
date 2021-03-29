@@ -1,6 +1,8 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+)
 
 // App - struct que contiene dependencias, pointers a DB conection.
 type App struct{}
@@ -8,6 +10,7 @@ type App struct{}
 // Run - sets up App
 func (app *App) Run() error {
 	fmt.Println("Setting App")
+	handler := transportHTTP.nNewHandler()
 	return nil
 }
 
