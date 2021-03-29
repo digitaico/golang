@@ -12,7 +12,7 @@ type App struct{}
 
 // Run - sets up App
 func (app *App) Run() error {
-	fmt.Println("Setting App")
+	fmt.Println("Setting Up App")
 	handler := transportHTTP.NewHandler()
 	handler.SetupRoutes()
 
@@ -22,7 +22,6 @@ func (app *App) Run() error {
 	}
 
 	return nil
-
 }
 
 func main() {
