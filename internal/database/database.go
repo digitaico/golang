@@ -8,6 +8,7 @@ import (
 	_ "github.com/jinzhu/gorm/dialects/postgres"
 )
 
+// NewDatabse - returns a pointer to a dabase object
 func NewDatabase() (*gorm.DB, error) {
 	fmt.Println("Setting up new DB connection")
 
@@ -17,7 +18,17 @@ func NewDatabase() (*gorm.DB, error) {
 	dbTable := os.Getenv("DB_TABLE")
 	dbPort := os.Getenv("DB_PORT")
 
-	connectString = fmt.Sprintf("host=%s port=%s dbname=%s password=%s ssl")
+	connectString = fmt.Sprintf("host=%s port=%s user=%s, dbname=%s password=%s sslmode=disable", dbHost, dbPort, dbUsername, dbTable, dbPassword)
 
-	return nil, nil
+	db, err := gorm.Open("postgres", connectString)
+
+	if err != nil {
+		return db, err
+	}
+
+	if err := db.DB().Ping(); err != nil {
+		return db, err
+	}
+
+	return db, nil
 }
