@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"net/http"
 
 	transportHTTP "github.com/digitai/golang/go-rest-api/internal/transport/http"
 )
@@ -15,7 +16,13 @@ func (app *App) Run() error {
 	handler := transportHTTP.NewHandler()
 	handler.SetupRoutes()
 
+	if err := http.ListenAndServe(":8080", handler.Router); err != nil {
+		fmt.Println("Fallo en setup se server")
+		return err
+	}
+
 	return nil
+
 }
 
 func main() {
