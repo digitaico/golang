@@ -8,17 +8,17 @@ import (
 )
 
 // Handler - almacena pointer para servicio dado
-type Hnadler struct {
+type Handler struct {
 	Router *mux.Router
 }
 
 // NewHnadler - retorna un pointer a Handler
-func NewHnadler() *Handler {
+func NewHandler() *Handler {
 	return &Handler{}
 }
 
 // SetupRoutes - sets ups all routes: router.
-func (h *Hnadler) SetupRoutes() {
+func (h *Handler) SetupRoutes() {
 	fmt.Println("Setting up Routes")
 	h.Router = mux.NewRouter()
 	h.Router.HandleFunc("/api/health", func(w http.ResponseWriter, r *http.Request) {

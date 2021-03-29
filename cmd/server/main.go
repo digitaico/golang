@@ -3,7 +3,7 @@ package main
 import (
 	"fmt"
 
-	transportHTTP "github.com/digitaico/golang/internal/transport/http"
+	transportHTTP "github.com/digitai/golang/go-rest-api/internal/transport/http"
 )
 
 // App - struct que contiene dependencias, pointers a DB conection.
@@ -14,6 +14,7 @@ func (app *App) Run() error {
 	fmt.Println("Setting App")
 	handler := transportHTTP.NewHandler()
 	handler.SetupRoutes()
+
 	return nil
 }
 
