@@ -2,6 +2,8 @@ package main
 
 import "fmt"
 
+type App struct{}
+
 func main() {
-	fmt.Println("vim-go")
+	fmt.Println("Rest api go - jea")
 }
