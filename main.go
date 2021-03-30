@@ -2,10 +2,13 @@ package main
 
 import (
 	"fmt"
-
-	"rsc.io/quote"
 )
 
 func main() {
-	fmt.Println(quote.Glass())
+	days := [...]string{"Dom", "Lun", "Mar", "Mier", "Jue", "Vier", "Sab"}
+	weekdays := days[1:6]
+
+	fmt.Println(days[0])
+	fmt.Println(days[5])
+	fmt.Println(weekdays)
 }
