@@ -4,9 +4,8 @@ import (
 	"fmt"
 )
 
-func myfunction(firstName string, apellido string) string {
-	fullname := firstName + " " + apellido
-	return fullname
+func myfunction(firstName string, apellido string) (string, error) {
+	return firstName + " " + apellido, nil
 }
 
 func main() {
@@ -46,5 +45,11 @@ func main() {
 	celtic := Team{name: "Celtic FC", players: players}
 
 	fmt.Println(celtic)
-	fmt.Println(myfunction("Eduardo", "Munoz"))
+
+	fullName, err := myfunction("elliot", "alderson")
+	if err != nil {
+		fmt.Println("Handler error case")
+	}
+	fmt.Println(fullName)
+
 }
