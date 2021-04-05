@@ -4,6 +4,11 @@ import (
 	"fmt"
 )
 
+func myfunction(firstName string, apellido string) string {
+	fullname := firstName + " " + apellido
+	return fullname
+}
+
 func main() {
 	days := [...]string{"Dom", "Lun", "Mar", "Mier", "Jue", "Vier", "Sab"}
 	weekdays := days[1:6]
@@ -41,4 +46,5 @@ func main() {
 	celtic := Team{name: "Celtic FC", players: players}
 
 	fmt.Println(celtic)
+	fmt.Println(myfunction("Eduardo", "Munoz"))
 }
