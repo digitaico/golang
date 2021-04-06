@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"io/ioutil"
 )
 
 func myfunction(firstName string, apellido string) (string, error) {
@@ -101,5 +102,13 @@ func main() {
 	empleado.PrintName()
 	empleado.Hired()
 	empleado.Fired()
+
+	data, err := ioutil.ReadFile("texto.txt")
+
+	if err != nil {
+		fmt.Println(err)
+	}
+
+	fmt.Print(string(data))
 
 }
