@@ -2,3 +2,6 @@ Hola,  Soy Jorge Eduardo.
 Este archivo de texto puede ser leido y escrito en operaciones flie/ i/o desde un PL.
 Gracias,  que los muerda el perro,
 
+textop adicional no existente previamente! jea
+Monocuco
+Marimonda

@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"io/ioutil"
+	"os"
 )
 
 func myfunction(firstName string, apellido string) (string, error) {
@@ -103,12 +104,38 @@ func main() {
 	empleado.Hired()
 	empleado.Fired()
 
-	data, err := ioutil.ReadFile("texto.txt")
+	miTexto := []byte("esto es lo que quiero escribir,  jea,  mi sonia preciosa hermosa")
+
+	erro := ioutil.WriteFile("texto2.txt", miTexto, 0777)
+
+	if erro != nil {
+		fmt.Println(erro)
+	}
+
+	data, err := ioutil.ReadFile("texto2.txt")
 
 	if err != nil {
 		fmt.Println(err)
 	}
 
 	fmt.Print(string(data))
+
+	f, err := os.OpenFile("texto.txt", os.O_APPEND|os.O_WRONLY, 0600)
+	if err != nil {
+		panic(err)
+	}
+
+	defer f.Close()
+
+	if _, err = f.WriteString("textop adicional no existente previamente! jea\nMonocuco\nMarimonda"); err != nil {
+		panic(err)
+	}
+
+	data, err = ioutil.ReadFile("texto.txt")
+	if err != nil {
+		fmt.Println(err)
+	}
+
+	fmt.Println(string(data))
 
 }
