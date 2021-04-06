@@ -19,6 +19,7 @@ func addOne() func() int {
 
 type Empleado struct {
 	Name string
+	Age  int
 }
 
 func (e *Empleado) UpdateName(newName string) {
@@ -27,6 +28,19 @@ func (e *Empleado) UpdateName(newName string) {
 
 func (e *Empleado) PrintName() {
 	fmt.Println(e.Name)
+}
+
+type Hirer interface {
+	Hired()
+	Fired()
+}
+
+func (e Empleado) Hired() {
+	fmt.Printf("el empleado %s fue contratdo", e.Name)
+}
+
+func (e Empleado) Fired() {
+	fmt.Printf("el empleado %s fue despedido a los %d años de edad", e.Name, e.Age)
 }
 
 func main() {
@@ -83,5 +97,9 @@ func main() {
 
 	var empleado Empleado
 	empleado.Name = "Jorge Eduardo Ardfila Muñoz"
+	empleado.Age = 45
 	empleado.PrintName()
+	empleado.Hired()
+	empleado.Fired()
+
 }
