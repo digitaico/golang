@@ -1,0 +1,22 @@
+{
+	"users": [
+		{
+			"name": "Elliot",
+			"type":"Reader",
+			"age":34,
+			"social": {
+				"facebook":"https://facebook.com/MrRobot",
+				"twitter": "https://twitter.com/MrRobot"
+			}
+		},
+		{
+			"name": "Jorge Eduardo",
+			"type":"Developer",
+			"age":51,
+			"social": {
+				"facebook":"https://facebook.com/Jeam",
+				"twitter": "https://twitter.com/Jeam__"
+			}
+		}
+	]
+}
