@@ -21,5 +21,6 @@ func main() {
 	fmt.Println("resto de applicaccion continua")
 
 	select {}
+	fmt.Println("end")
 
 }
