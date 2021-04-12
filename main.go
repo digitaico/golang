@@ -2,13 +2,24 @@ package main
 
 import (
 	"fmt"
+	"time"
 )
 
-func Calculate(x int) (result int) {
-	result = x + 2
-	return result
+func backgroundTask() {
+	ticker := time.NewTicker(1 * time.Second)
+
+	for _ = range ticker.C {
+		fmt.Println("tock")
+	}
 }
 
 func main() {
-	fmt.Println("testing testing")
+	fmt.Println("Tickers tut - Go Jea")
+
+	go backgroundTask()
+
+	fmt.Println("resto de applicaccion continua")
+
+	select {}
+
 }
