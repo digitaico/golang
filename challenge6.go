@@ -24,6 +24,6 @@ func plusMinus(arr []int) {
 }
 
 func main() {
-	arr := []int{-4, 3, -9, 0, 4, 1}
+	arr := []int{-3, 9, 0, 0, 0, -7, -3}
 	plusMinus(arr)
 }
