@@ -1,5 +1,6 @@
 package main
 
+// comparing triplets
 import "fmt"
 
 func compareTriplets(ar []int, br []int) []int {
